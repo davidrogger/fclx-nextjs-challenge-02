@@ -28,7 +28,8 @@
 		"customizations": {
 			"vscode": {
 				"extensions": [
-					"humao.rest-client"
+					"humao.rest-client",
+					"prisma.prisma"
 				]
 			}
 		}
