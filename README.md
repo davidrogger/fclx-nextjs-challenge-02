@@ -55,3 +55,11 @@ Crie o arquivo api.http para declarar as 2 chamadas a serem realizadas.
   5. Após iniciar a composição dos container(`docker compose up --build` para visualizar as instalações e inicializações ou adicione a flag -d, para inicialização de fundo, gosto de usar --build para forçar a remontagem da imagem caso ja tenha montado ela alguma vez), e todas inicializações concluirem, basta usar o api.http ou outra http client, para realizar o post desejado, e para o get podemos acessar via navegador.
 
 </details>
+
+#
+
+## Rodar a aplicação
+
+```
+$ docker compose up --build
+```
