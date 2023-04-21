@@ -39,12 +39,12 @@ Crie o arquivo api.http para declarar as 2 chamadas a serem realizadas.
   - Primeramente iniciando o next.js `npx create-next-app --typescript`
   - Após cria-lo, criei o Dockerfile e o docker-compose com suas configurações iniciais, para copiar o next para o container.
   - Configurei o .devcontainer, para testar a extensão apresentada pelo Luiz Carlos
-  - Por padrão o Next.js ja usa a porta 3000
+  - Por padrão o Next.js usa a porta 3000
   
   2. Realizei a instalação do Prisma `npm i prisma -D`
   - Inicializei o prisma definindo o sqlite como banco `npx prisma --datasource-provider sqlite`
-  - Criei o model solicitado, com ID gerado automáticamente com uuid e o campo message comostring
-  - Realizei a conexão do prisma no arquivo prims na pasta app, para evitar leak de conexões.
+  - Criei o model solicitado, com ID gerado automáticamente com autoincrement e o campo message como string
+  - Realizei a conexão do prisma no arquivo prisma na pasta app, para evitar leak de conexões, conforme orientado na aula do chatgpt.
   
   3. Criei a pasta chats, onde ficam as rotas para as solicitações GET e POST
   - GET http://localhost:3000/api/chats
