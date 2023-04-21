@@ -35,12 +35,23 @@ Crie o arquivo api.http para declarar as 2 chamadas a serem realizadas.
     </strong>
   </summary>
 
-  1. Conforme a aula de ontem(19/04/2023) usando next, segui os passos apresentados pelo Luiz Carlos instalando o Next.js(nunca havia usado), fiz a configuração dos container com o Dockerfile, docker-compose e devcontainer.
+  1. Criar uma aplicação Next.js com Docker na porta 3000;
+    - Primeramente iniciando o next.js `npx create-next-app --typescript`
+    - Após cria-lo, criei o Dockerfile e o docker-compose com suas configurações iniciais, para copiar o next para o container.
+    - Configurei o .devcontainer, para testar a extensão apresentada pelo Luiz Carlos
+    - Por padrão o Next.js ja usa a porta 3000
+  
+  2. Realizei a instalação do Prisma `npm i prisma -D`
+    - Inicializei o prisma definindo o sqlite como banco `npx prisma --datasource-provider sqlite`
+    - Criei o model solicitado, com ID gerado automáticamente com uuid e o campo message como string
+    - Realizei a conexão do prisma no arquivo prims na pasta app, para evitar leak de conexões.
+  
+  3. Criei a pasta chats, onde ficam as rotas para as solicitações GET e POST
+    - GET http://localhost:3000/api/chats
+    - POST http://localhost:3000/api/chats body{ message string }
+  
+  4. Revisei o docker-compose para realizar a instalação dos modulos e iniciar a aplicação de forma automática.
 
-  2. Defini o local do banco de dados na pasta database, onde é apontado pelo arquivo .env, para quando realizada a migration.
-
-  3. Declarei o modelo do Chat apontando a geração automática do ID usando uuid de uma string e o campo message como string.
-
-  4. Na pasta app, criei o arquivo api.http, para realizar o teste manual dos requests solicitados, dos verbos get e post.
+  5. Após iniciar a composição dos container(`docker compose up --build` para visualizar as instalações e inicializações ou adicione a flag -d, para inicialização de fundo, gosto de usar --build para forçar a remontagem da imagem caso ja tenha montado ela alguma vez), e todas inicializações concluirem, basta usar o api.http ou outra http client, para realizar o post desejado, e para o get podemos acessar via navegador.
 
 </details>
