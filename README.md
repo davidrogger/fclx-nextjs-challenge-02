@@ -36,19 +36,19 @@ Crie o arquivo api.http para declarar as 2 chamadas a serem realizadas.
   </summary>
 
   1. Criar uma aplicação Next.js com Docker na porta 3000;
-    - Primeramente iniciando o next.js `npx create-next-app --typescript`
-    - Após cria-lo, criei o Dockerfile e o docker-compose com suas configurações iniciais, para copiar o next para o container.
-    - Configurei o .devcontainer, para testar a extensão apresentada pelo Luiz Carlos
-    - Por padrão o Next.js ja usa a porta 3000
+  - Primeramente iniciando o next.js `npx create-next-app --typescript`
+  - Após cria-lo, criei o Dockerfile e o docker-compose com suas configurações iniciais, para copiar o next para o container.
+  - Configurei o .devcontainer, para testar a extensão apresentada pelo Luiz Carlos
+  - Por padrão o Next.js ja usa a porta 3000
   
   2. Realizei a instalação do Prisma `npm i prisma -D`
-    - Inicializei o prisma definindo o sqlite como banco `npx prisma --datasource-provider sqlite`
-    - Criei o model solicitado, com ID gerado automáticamente com uuid e o campo message como string
-    - Realizei a conexão do prisma no arquivo prims na pasta app, para evitar leak de conexões.
+  - Inicializei o prisma definindo o sqlite como banco `npx prisma --datasource-provider sqlite`
+  - Criei o model solicitado, com ID gerado automáticamente com uuid e o campo message comostring
+  - Realizei a conexão do prisma no arquivo prims na pasta app, para evitar leak de conexões.
   
   3. Criei a pasta chats, onde ficam as rotas para as solicitações GET e POST
-    - GET http://localhost:3000/api/chats
-    - POST http://localhost:3000/api/chats body{ message string }
+  - GET http://localhost:3000/api/chats
+  - POST http://localhost:3000/api/chats body{ message string }
   
   4. Revisei o docker-compose para realizar a instalação dos modulos e iniciar a aplicação de forma automática.
 
